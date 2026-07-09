@@ -151,6 +151,18 @@
   .section-head h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem);}
   .section-head p{margin-top:16px; color:var(--ink-soft); font-size:1.04rem; max-width:56ch;}
 
+  /* ---------- Gallery ---------- */
+  .gallery-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .gallery-item{
+    border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);
+    background:var(--panel);
+  }
+  .gallery-item img{width:100%; height:360px; object-fit:cover; display:block;}
+  .gallery-caption{padding:20px 22px;}
+  .gallery-caption .eyebrow{margin-bottom:6px;}
+  .gallery-caption div.title{font-weight:600; font-size:1.02rem;}
+  @media (max-width:900px){ .gallery-grid{grid-template-columns:1fr;} .gallery-item img{height:280px;} }
+
   /* ---------- Philosophy ---------- */
   .philosophy{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
   .philosophy .quote{
@@ -292,7 +304,7 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="eyebrow">Helena, Montana — APHA / AQHA Hunter Under Saddle &amp; Western Pleasure</div>
-    <h1>Built for the rail.<br><span class="warm-text">Bred for the pattern.</span></h1>
+    <h1>Raised right.<br><span class="warm-text">Shown right.</span></h1>
     <p class="lede">Training and campaigning APHA and AQHA hunter under saddle and western pleasure show horses — with a particular specialty in starting young prospects right from their very first ride.</p>
     <div class="cta-row">
       <a class="btn btn-solid" href="#contact">Book a Consult</a>
@@ -325,11 +337,37 @@
     <div class="eyebrow">APHA &amp; AQHA · Hunter Under Saddle · Western Pleasure · Young Horse Specialist</div>
     <div class="stat-row">
       <div class="stat"><b>HUS / WP</b>primary specialty</div>
-      <div class="stat"><b>90</b>day starting program</div>
+      <div class="stat"><b>Weanling</b>on, starting age</div>
       <div class="stat"><b>MT</b>Helena, Montana</div>
     </div>
   </div>
 </div>
+
+<section id="gallery">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:var(--sun);">In the Program</div>
+      <h2>Groundwork to the show pen</h2>
+      <p>A look at the process in action — from early desensitizing work on a young prospect to a finished trip under saddle.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="assets/photos/young-horse-groundwork.webp" alt="Saddled young paint horse working calmly with a desensitizing ball during groundwork" loading="lazy">
+        <div class="gallery-caption">
+          <div class="eyebrow" style="color:var(--cyan);">Young Horse Starting</div>
+          <div class="title">Building trust before the first ride</div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/photos/show-hunter-under-saddle.webp" alt="Rider showing a bay horse at the trot in hunter under saddle at an indoor show" loading="lazy">
+        <div class="gallery-caption">
+          <div class="eyebrow" style="color:var(--magenta);">Show Ready</div>
+          <div class="title">Hunter under saddle in the ring</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="philosophy">
   <div class="section-inner philosophy">
@@ -392,31 +430,31 @@
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="eyebrow" style="color:var(--magenta);">Young Horse Specialty</div>
-      <h2>Ninety days, in order</h2>
-      <p>Every young prospect moves through the same sequence toward hunter under saddle or western pleasure — the pace adjusts to the horse, the order never does.</p>
+      <h2>Started right, from the day they're weaned</h2>
+      <p>Every young prospect moves through the same sequence toward hunter under saddle or western pleasure, starting at weaning — the pace adjusts to the horse, the order never does.</p>
     </div>
     <div class="timeline reveal">
       <div class="timeline-line"><div class="fill"></div></div>
       <div class="timeline-stops">
         <div class="stop">
-          <span class="day-range">Days 1–30</span>
+          <span class="day-range">Weanling</span>
           <h3>Groundwork &amp; Foundation</h3>
-          <p>Leading, yielding, tying, sacking out, and long-lining. No rider yet — just trust and mechanics.</p>
+          <p>Leading, yielding, tying, and sacking out. No rider yet — just trust and mechanics, built from the very start.</p>
         </div>
         <div class="stop">
-          <span class="day-range">Days 31–60</span>
+          <span class="day-range">Yearling</span>
+          <h3>Long-Lining &amp; Handling</h3>
+          <p>Building on the foundation with long-lining and continued handling, so nothing about tack or pressure is a surprise later.</p>
+        </div>
+        <div class="stop">
+          <span class="day-range">Two-Year-Old</span>
           <h3>First Rides &amp; Basics</h3>
           <p>Mounting, steering, stopping, and building confidence at the walk, jog, and lope.</p>
         </div>
         <div class="stop">
-          <span class="day-range">Days 61–90</span>
+          <span class="day-range">Show Ready</span>
           <h3>Cadence &amp; Frame</h3>
-          <p>Self-carriage and headset specific to hunter under saddle or western pleasure, whichever suits the horse.</p>
-        </div>
-        <div class="stop">
-          <span class="day-range">Ongoing</span>
-          <h3>Show Ready</h3>
-          <p>Pattern work, ring exposure, and a plan for the horse's first outing.</p>
+          <p>Self-carriage and headset specific to hunter under saddle or western pleasure, then pattern work and ring exposure.</p>
         </div>
       </div>
     </div>
