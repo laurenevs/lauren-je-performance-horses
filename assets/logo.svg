@@ -33,6 +33,6 @@
     <line x1="250" y1="140" x2="410" y2="185"/>
   </g>
 
-  <text x="250" y="205" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="30" fill="url(#chromeText)" letter-spacing="1">LAUREN JE</text>
+  <text x="250" y="205" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="40" fill="url(#chromeText)" letter-spacing="1">LJ</text>
   <text x="250" y="228" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="500" font-size="12" fill="#C4B7E8" letter-spacing="3">PERFORMANCE HORSES</text>
 </svg>
