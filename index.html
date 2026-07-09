@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lauren JE Performance Horses | Helena, Montana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#2B1B4C;
+    --void-deep:#1F1440;
+    --panel:#3B2768;
+    --panel-soft:#463074;
+    --magenta:#F27FCB;
+    --purple:#A883E8;
+    --cyan:#8AD9CE;
+    --sun:#FDD98F;
+    --paper:#F8F2FF;
+    --ink-soft:#CBBBE8;
+    --line:rgba(248,242,255,0.14);
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--paper);
+    background:var(--void);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    line-height:1.12;
+    letter-spacing:-0.01em;
+  }
+  .warm-text{
+    background:linear-gradient(100deg, var(--sun) 0%, var(--magenta) 55%, var(--purple) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(31,20,64,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+  }
+  .brand-lockup{display:flex; align-items:center; gap:12px;}
+  .brand-lockup svg{width:38px; height:38px; flex-shrink:0;}
+  .brand-text{
+    font-family:'Fraunces', serif;
+    font-weight:700; font-size:1.05rem;
+    line-height:1.2;
+  }
+  .brand-text small{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-weight:500; font-size:0.66rem;
+    letter-spacing:0.1em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  nav ul{list-style:none; display:flex; gap:28px;}
+  nav a{color:var(--paper); font-size:0.9rem; font-weight:500; opacity:0.82; transition:opacity 0.2s;}
+  nav a:hover, nav a:focus-visible{opacity:1;}
+  @media (max-width:900px){ nav ul{display:none;} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(ellipse 1000px 560px at 50% 8%, #4A2C7C 0%, var(--void) 65%);
+    padding-top:88px;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:900px; margin:0 auto;
+    padding:72px 28px 0;
+    position:relative; z-index:2;
+    text-align:center;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .hero .eyebrow{color:var(--cyan); margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(2.5rem, 6vw, 4.4rem);
+    max-width:16ch;
+  }
+  .hero .lede{
+    margin-top:24px; max-width:52ch; font-size:1.12rem; color:var(--ink-soft);
+  }
+  .hero .cta-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:36px;}
+  .btn{
+    display:inline-block; font-family:'Inter', sans-serif; font-weight:600; font-size:0.92rem;
+    padding:14px 28px; border-radius:999px; border:1.5px solid transparent;
+    transition:transform 0.15s ease, filter 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:linear-gradient(100deg, var(--magenta), var(--purple)); color:#241247;}
+  .btn-solid:hover{filter:brightness(1.08);}
+  .btn-ghost{border-color:rgba(248,242,255,0.35); color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--cyan); background:rgba(138,217,206,0.08);}
+
+  /* ---------- Soft sunset scene (no grid, just a glow + horizon) ---------- */
+  .scene{position:relative; margin-top:60px; height:220px;}
+  .scene svg{position:absolute; inset:0; width:100%; height:100%;}
+
+  /* ---------- Stat strip ---------- */
+  .stat-strip{
+    background:var(--void-deep);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:24px 28px;
+  }
+  .stat-strip-inner{
+    max-width:1180px; margin:0 auto;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .stat-strip .eyebrow{color:var(--magenta);}
+  .stat-row{display:flex; gap:36px; flex-wrap:wrap;}
+  .stat{font-family:'Inter', sans-serif; font-size:0.82rem; color:var(--ink-soft);}
+  .stat b{display:block; font-family:'Fraunces', serif; font-size:1.5rem; font-weight:700; color:var(--paper);}
+
+  /* ---------- Section generic ---------- */
+  section{padding:100px 28px;}
+  .section-inner{max-width:1180px; margin:0 auto;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem);}
+  .section-head p{margin-top:16px; color:var(--ink-soft); font-size:1.04rem; max-width:56ch;}
+
+  /* ---------- Philosophy ---------- */
+  .philosophy{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
+  .philosophy .quote{
+    font-family:'Fraunces', serif; font-weight:600; font-style:italic; font-size:1.6rem; line-height:1.4;
+  }
+  .philosophy .quote-line{margin-top:26px; width:70px; height:3px; border-radius:3px; background:linear-gradient(90deg, var(--magenta), var(--purple));}
+  .philosophy .copy p{margin-bottom:18px; color:var(--ink-soft); font-size:1.04rem;}
+  .philosophy .copy p:last-child{margin-bottom:0;}
+  @media (max-width:900px){ .philosophy{grid-template-columns:1fr; gap:32px;} }
+
+  /* ---------- Programs ---------- */
+  .programs-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;
+  }
+  .program-card{
+    background:var(--panel); padding:34px 28px; border-radius:var(--radius);
+    border:1px solid var(--line);
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .program-card:hover{background:var(--panel-soft); transform:translateY(-3px);}
+  .program-card.featured{background:linear-gradient(160deg, #4A2C7C, var(--panel));}
+  .program-card .num{
+    font-family:'Fraunces', serif; font-weight:700; font-size:1.1rem; color:var(--sun);
+    margin-bottom:16px; display:block;
+  }
+  .program-card h3{font-size:1.24rem; margin-bottom:10px;}
+  .program-card p{color:var(--ink-soft); font-size:0.96rem;}
+  @media (max-width:900px){ .programs-grid{grid-template-columns:1fr;} }
+
+  /* ---------- Process timeline ---------- */
+  .process{background:var(--void-deep);}
+  .timeline{position:relative; padding-top:8px;}
+  .timeline-line{position:relative; height:3px; background:var(--line); border-radius:3px; margin:0;}
+  .timeline-line .fill{
+    position:absolute; top:0; left:0; height:3px; width:100%; border-radius:3px;
+    background:linear-gradient(90deg, var(--sun), var(--magenta), var(--purple));
+  }
+  .timeline-stops{display:grid; grid-template-columns:repeat(4, 1fr); margin-top:-1.5px;}
+  .stop{position:relative; padding-top:30px;}
+  .stop::before{
+    content:''; position:absolute; top:-7px; left:0; width:14px; height:14px; border-radius:50%;
+    background:var(--magenta); border:3px solid var(--void-deep);
+  }
+  .stop .day-range{font-family:'Inter', sans-serif; font-weight:600; font-size:0.8rem; color:var(--cyan); margin-bottom:10px; display:block;}
+  .stop h3{font-size:1.12rem; margin-bottom:8px;}
+  .stop p{color:var(--ink-soft); font-size:0.92rem;}
+  @media (max-width:900px){ .timeline-stops{grid-template-columns:1fr; gap:28px;} }
+
+  /* ---------- Facility ---------- */
+  .facility{display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;}
+  .facility-visual{
+    background:radial-gradient(ellipse at 50% 35%, #6B3FA0 0%, #3B2768 55%, var(--void-deep) 100%);
+    border-radius:var(--radius); aspect-ratio:4/3; position:relative; overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .facility-visual svg{position:absolute; inset:0; width:100%; height:100%;}
+  .facility-list{list-style:none; margin-top:26px;}
+  .facility-list li{display:flex; gap:14px; padding:16px 0; border-top:1px solid var(--line); color:var(--ink-soft); font-size:0.98rem;}
+  .facility-list li:last-child{border-bottom:1px solid var(--line);}
+  .facility-list b{color:var(--paper); min-width:120px; font-weight:600;}
+  @media (max-width:900px){ .facility{grid-template-columns:1fr; gap:32px;} }
+
+  /* ---------- Contact ---------- */
+  .contact{background:linear-gradient(160deg, #4A2C7C, var(--void));}
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .contact-info h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-bottom:18px;}
+  .contact-info p{color:var(--ink-soft); max-width:44ch; margin-bottom:26px;}
+  .contact-detail{margin-bottom:14px;}
+  .contact-detail .eyebrow{color:var(--cyan); opacity:0.95; margin-bottom:4px;}
+  .contact-detail div{font-size:1.06rem; font-weight:600;}
+  form{display:flex; flex-direction:column; gap:14px;}
+  form label{
+    font-family:'Inter', sans-serif; font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--ink-soft); margin-bottom:6px; display:block;
+  }
+  form input, form textarea{
+    width:100%; padding:13px 16px; border:1.5px solid var(--line); border-radius:10px;
+    background:rgba(31,20,64,0.5); font-family:'Inter', sans-serif; font-size:0.96rem; color:var(--paper);
+  }
+  form input::placeholder, form textarea::placeholder{color:rgba(248,242,255,0.35);}
+  form input:focus-visible, form textarea:focus-visible{outline:2px solid var(--cyan); outline-offset:1px;}
+  form textarea{resize:vertical; min-height:110px;}
+  .btn-submit{
+    margin-top:4px; background:linear-gradient(100deg, var(--sun), var(--magenta)); color:#241247; border:none; cursor:pointer;
+    font-family:'Inter', sans-serif; font-weight:600; font-size:0.94rem;
+    padding:15px 28px; border-radius:999px; align-self:flex-start; transition:filter 0.2s ease;
+  }
+  .btn-submit:hover{filter:brightness(1.08);}
+  @media (max-width:900px){ .contact-wrap{grid-template-columns:1fr; gap:40px;} }
+
+  footer{background:var(--void-deep); padding:38px 28px; border-top:1px solid var(--line);}
+  .footer-inner{
+    max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
+  .footer-meta{color:var(--ink-soft); font-size:0.84rem; font-family:'Inter', sans-serif;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  @media (max-width:900px){ section{padding:68px 20px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand-lockup">
+      <svg viewBox="0 0 60 60" aria-hidden="true">
+        <defs>
+          <linearGradient id="sunGradNav" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FDD98F"/>
+            <stop offset="55%" stop-color="#F27FCB"/>
+            <stop offset="100%" stop-color="#A883E8"/>
+          </linearGradient>
+          <clipPath id="sunClipNav"><circle cx="30" cy="26" r="16"/></clipPath>
+        </defs>
+        <circle cx="30" cy="26" r="16" fill="url(#sunGradNav)"/>
+        <g clip-path="url(#sunClipNav)" stroke="#2B1B4C" stroke-width="2">
+          <line x1="14" y1="30" x2="46" y2="30"/>
+          <line x1="14" y1="34" x2="46" y2="34"/>
+          <line x1="14" y1="38" x2="46" y2="38"/>
+        </g>
+        <line x1="4" y1="48" x2="56" y2="48" stroke="#8AD9CE" stroke-width="1.6"/>
+      </svg>
+      <div class="brand-text">Lauren JE<small>Performance Horses</small></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#programs">Training</a></li>
+        <li><a href="#philosophy">Approach</a></li>
+        <li><a href="#process">Young Horses</a></li>
+        <li><a href="#facility">Facility</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Helena, Montana — APHA / AQHA Hunter Under Saddle &amp; Western Pleasure</div>
+    <h1>Built for the rail.<br><span class="warm-text">Bred for the pattern.</span></h1>
+    <p class="lede">Training and campaigning APHA and AQHA hunter under saddle and western pleasure show horses — with a particular specialty in starting young prospects right from their very first ride.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#contact">Book a Consult</a>
+      <a class="btn btn-ghost" href="#programs">View Training Programs</a>
+    </div>
+  </div>
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 1180 220" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <radialGradient id="sunGlow" cx="50%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#FDD98F"/>
+          <stop offset="45%" stop-color="#F27FCB" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#A883E8" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2B1B4C" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#2B1B4C" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <circle cx="590" cy="120" r="150" fill="url(#sunGlow)"/>
+      <path d="M0,150 Q295,120 590,150 T1180,150" fill="none" stroke="#8AD9CE" stroke-width="1.6" opacity="0.65"/>
+      <path d="M0,178 Q295,158 590,178 T1180,178" fill="none" stroke="#F27FCB" stroke-width="1.2" opacity="0.4"/>
+      <rect x="0" y="170" width="1180" height="50" fill="url(#fadeGrad)"/>
+    </svg>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="eyebrow">APHA &amp; AQHA · Hunter Under Saddle · Western Pleasure · Young Horse Specialist</div>
+    <div class="stat-row">
+      <div class="stat"><b>HUS / WP</b>primary specialty</div>
+      <div class="stat"><b>90</b>day starting program</div>
+      <div class="stat"><b>MT</b>Helena, Montana</div>
+    </div>
+  </div>
+</div>
+
+<section id="philosophy">
+  <div class="section-inner philosophy">
+    <div class="reveal">
+      <p class="quote">"Cadence isn't forced into a show horse. It's found — and it's found earliest in the ones started right as babies."</p>
+      <div class="quote-line"></div>
+    </div>
+    <div class="reveal copy">
+      <div class="eyebrow" style="color:var(--magenta); margin-bottom:14px;">Approach</div>
+      <p>My program is built around hunter under saddle and western pleasure — the flat classes, where self-carriage, willingness, and a level, consistent frame win over anything flashy.</p>
+      <p>Those qualities are easiest to build into a horse before bad habits exist, which is why young horse starting is such a core part of what I do. A colt started with the rail in mind from his first ride carries that foundation into every class after.</p>
+      <p>Every horse — young prospect or horse already showing — gets an individual plan based on its age, mind, and pedigree, not a one-size program run on a clock.</p>
+    </div>
+  </div>
+</section>
+
+<section id="programs" style="background:var(--panel);">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:var(--cyan);">Training &amp; Lessons</div>
+      <h2>Programs built for the show pen</h2>
+      <p>Full training, partial training, and lesson programs — for owners bringing along a young prospect or campaigning a horse already in the ring.</p>
+    </div>
+    <div class="programs-grid reveal">
+      <div class="program-card featured">
+        <span class="num">01</span>
+        <h3>Hunter Under Saddle</h3>
+        <p>Flat work, headset, and ring presence for APHA and AQHA prospects — from green-broke to show-ready.</p>
+      </div>
+      <div class="program-card featured">
+        <span class="num">02</span>
+        <h3>Western Pleasure</h3>
+        <p>Cadence, willingness, and self-carriage developed at the horse's own pace, with an eye toward the pattern.</p>
+      </div>
+      <div class="program-card">
+        <span class="num">03</span>
+        <h3>Young Horse Starting</h3>
+        <p>Groundwork through first rides for weanlings, yearlings, and two-year-olds — a specialty, not an afterthought.</p>
+      </div>
+      <div class="program-card">
+        <span class="num">04</span>
+        <h3>Private Lessons</h3>
+        <p>One-on-one instruction for youth, amateur, and open riders — showmanship, pattern work, and ring strategy.</p>
+      </div>
+      <div class="program-card">
+        <span class="num">05</span>
+        <h3>Show Prep &amp; Mentorship</h3>
+        <p>Ringside coaching and prep for owners campaigning their own horse through the show season.</p>
+      </div>
+      <div class="program-card">
+        <span class="num">06</span>
+        <h3>Sales &amp; Leasing Guidance</h3>
+        <p>Straight talk on fit, price, and paperwork for buyers and sellers navigating the APHA/AQHA market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:var(--magenta);">Young Horse Specialty</div>
+      <h2>Ninety days, in order</h2>
+      <p>Every young prospect moves through the same sequence toward hunter under saddle or western pleasure — the pace adjusts to the horse, the order never does.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-line"><div class="fill"></div></div>
+      <div class="timeline-stops">
+        <div class="stop">
+          <span class="day-range">Days 1–30</span>
+          <h3>Groundwork &amp; Foundation</h3>
+          <p>Leading, yielding, tying, sacking out, and long-lining. No rider yet — just trust and mechanics.</p>
+        </div>
+        <div class="stop">
+          <span class="day-range">Days 31–60</span>
+          <h3>First Rides &amp; Basics</h3>
+          <p>Mounting, steering, stopping, and building confidence at the walk, jog, and lope.</p>
+        </div>
+        <div class="stop">
+          <span class="day-range">Days 61–90</span>
+          <h3>Cadence &amp; Frame</h3>
+          <p>Self-carriage and headset specific to hunter under saddle or western pleasure, whichever suits the horse.</p>
+        </div>
+        <div class="stop">
+          <span class="day-range">Ongoing</span>
+          <h3>Show Ready</h3>
+          <p>Pattern work, ring exposure, and a plan for the horse's first outing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="facility">
+  <div class="section-inner facility">
+    <div class="reveal">
+      <div class="facility-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="facSun" cx="50%" cy="32%" r="40%">
+              <stop offset="0%" stop-color="#FDD98F"/>
+              <stop offset="60%" stop-color="#F27FCB" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#A883E8" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="100" r="90" fill="url(#facSun)"/>
+          <path d="M0,190 Q100,175 200,190 T400,190" fill="none" stroke="#8AD9CE" stroke-width="1.6" opacity="0.6"/>
+          <path d="M0,215 Q100,202 200,215 T400,215" fill="none" stroke="#F27FCB" stroke-width="1.2" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--magenta); margin-bottom:14px;">Facility</div>
+      <h2>Helena, Montana</h2>
+      <p style="color:var(--ink-soft); margin-top:14px; max-width:48ch;">A small, working facility — horses in training get individual attention, not a spot on a crowded schedule.</p>
+      <ul class="facility-list">
+        <li><b>Turnout</b><span>Daily turnout on pasture, weather permitting</span></li>
+        <li><b>Riding space</b><span>Covered arena and outdoor arena for pattern and ring work</span></li>
+        <li><b>Group size</b><span>Limited number of horses in training at any time</span></li>
+        <li><b>Lessons</b><span>Private and small-group, by appointment</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-inner">
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <div class="eyebrow" style="color:var(--cyan);">Get in touch</div>
+        <h2>Start a conversation</h2>
+        <p>Whether you're bringing a young prospect along, looking for lessons, or thinking through a sale or lease — reach out and we'll figure out the right fit.</p>
+        <div class="contact-detail">
+          <div class="eyebrow">Location</div>
+          <div>Helena, Montana</div>
+        </div>
+        <div class="contact-detail">
+          <div class="eyebrow">Email</div>
+          <div>hello@laurenloveshorses.com</div>
+        </div>
+        <div class="contact-detail">
+          <div class="eyebrow">Phone</div>
+          <div>(406) 555-0148</div>
+        </div>
+      </div>
+      <form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.btn-submit').textContent='Sent — thank you';">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">What are you looking for?</label>
+          <textarea id="message" required placeholder="Young horse starting, HUS/WP training, lessons, sales..."></textarea>
+        </div>
+        <button class="btn-submit" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand-lockup">
+      <svg viewBox="0 0 60 60" aria-hidden="true" width="28" height="28">
+        <circle cx="30" cy="26" r="16" fill="url(#sunGradNav)"/>
+        <g clip-path="url(#sunClipNav)" stroke="#1F1440" stroke-width="2">
+          <line x1="14" y1="30" x2="46" y2="30"/>
+          <line x1="14" y1="34" x2="46" y2="34"/>
+          <line x1="14" y1="38" x2="46" y2="38"/>
+        </g>
+        <line x1="4" y1="48" x2="56" y2="48" stroke="#8AD9CE" stroke-width="1.6"/>
+      </svg>
+      <div class="brand-text">Lauren JE Performance Horses</div>
+    </div>
+    <div class="footer-meta">laurenloveshorses.com &nbsp;·&nbsp; Helena, Montana</div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
