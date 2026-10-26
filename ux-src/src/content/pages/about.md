@@ -8,7 +8,11 @@ Since then I've led teams at Workiva, GitLab and Optro. Today I lead design and 
 
 ## How I lead
 
-<mark class="todo">NEEDS LAUREN: this is your section to write in your own voice. A few prompts if they help. What do you do in your first 90 days? What do you write down that other leaders don't? How do you decide what your team stops doing?</mark>
+I lead people first. I meet people where they are, figure out what each person needs, and make sure they have it so they can succeed. That looks different for everyone, because we're all human and we're not all the same.
+
+I lead with compassion, and I don't micromanage. I like to inspire people. I want to work with fun people, have a good time, and do something really great together. The culture I build is fun, safe and focused on learning, and I don't tolerate toxic ones.
+
+In my first 90 days, I do a listening tour, then set a direction based on what I heard.
 
 A few things the case studies show, in case you're skimming:
 
