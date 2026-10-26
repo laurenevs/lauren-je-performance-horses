@@ -1,6 +1,6 @@
 ---
 title: Building a research function
-order: 1
+order: 5
 emoji: 🔬
 theme: Org building
 summary: Two researchers taking requests became six embedded with product teams. The headcount is the least interesting part. The infrastructure is why it stuck.
@@ -13,7 +13,7 @@ stats:
 
 ## Before
 
-Research was two people and a queue. A product manager asked for a study, a researcher ran it, and a report went into a folder. Most of the work was tactical usability testing, scheduled after a design was mostly decided. In the baseline year, 11% of delivered studies were strategic.
+I built this alongside leading design for the company's largest product area. When I started, research was two people and a queue. A product manager asked for a study, a researcher ran it, and a report went into a folder. Most of the work was tactical usability testing, scheduled after a design was mostly decided. In the baseline year, 11% of delivered studies were strategic.
 
 That model has a ceiling. Every request costs the same researcher hours, so the only way to do more is to hire more, and a service desk is hard to staff because nobody can point to what the last hire changed. The team was busy and mostly invisible.
 

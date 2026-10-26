@@ -1,6 +1,6 @@
 ---
 title: The case that didn't get funded
-order: 5
+order: 6
 emoji: 🧾
 theme: Investment case
 summary: I measured what participant recruitment was costing, surfaced a privacy exposure in how participant data was handled, and proposed an investment. It hasn't been funded.

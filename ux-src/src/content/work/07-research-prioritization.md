@@ -1,6 +1,6 @@
 ---
 title: A prioritization process for a team that couldn't say no
-order: 6
+order: 7
 era: earlier
 place: GitLab
 emoji: 🧮

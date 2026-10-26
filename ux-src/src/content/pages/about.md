@@ -4,7 +4,7 @@ I have an M.S. in Statistics and a B.S. in Applied Mathematics. I came into UX t
 
 That background explains most of how I work. I want a definition before a dashboard, a baseline before a claim, and a median when the data has a long tail. When I say design got faster, I want to be able to show which number moved and where it came from.
 
-Since then I've run research and design teams at Workiva, GitLab and Optro. For the last several years the job has been building organizations rather than producing screens: hiring, operating models, review systems, strategy and the measurement that holds it together.
+Since then I've led teams at Workiva, GitLab and Optro. Today I lead design and research together, in an organization where designers outnumber researchers, and I set product direction across the portfolio. The statistics background is how I lead, not what I do. It's why I instrument the function and argue from evidence. For the last several years the job has been building organizations rather than producing screens: operating models, review systems, strategy and the measurement that holds it together.
 
 ## How I lead
 
@@ -12,9 +12,10 @@ Since then I've run research and design teams at Workiva, GitLab and Optro. For 
 
 A few things the case studies show, in case you're skimming:
 
+- **I set direction.** The agentic experience framework guides design across five product lines.
 - **I build the system, then step back.** Intake, review checkpoints and scorecards let a team do good work without me in every room.
 - **I measure my own function.** If design or research can't show what it produced, it loses resourcing arguments to teams that can.
-- **I change how I work before asking the team to.** I built my own AI tooling before rewriting the team's research rules.
+- **I change how I work before asking the team to.** I built my own AI tooling alongside backing the team's.
 - **I'll tell you what didn't work.** One of the case studies is an investment that didn't get funded.
 
 ## What I look for in a team

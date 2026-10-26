@@ -1,6 +1,6 @@
 ---
 title: Six months with ten testers
-order: 9
+order: 10
 era: earlier
 place: Workiva
 emoji: 🔭
