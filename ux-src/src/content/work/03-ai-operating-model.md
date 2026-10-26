@@ -53,7 +53,3 @@ I built it myself on purpose. It's hard to ask a team to change how they work wi
 Customers see one consistent set of agentic patterns across five product lines. Designers put testable prototypes in front of customers and engineers instead of static files. The synthetic evaluation tool is installed across the team and has a path to product leadership. Every research plan starts with what existing data already answers. The digests run every week without anyone assembling them, and duplicated work surfaces early.
 
 <mark class="todo">NEEDS LAUREN: any number you can publish on adoption or time saved. If not, this section stands as written.</mark>
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: one or two honest sentences.</mark>

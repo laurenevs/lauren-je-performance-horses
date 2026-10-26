@@ -57,7 +57,3 @@ The scorecard also outgrew design and research. It is now one of the strategic p
 ## The metric that went the wrong way
 
 <mark class="todo">NEEDS LAUREN: which measure moved in the wrong direction, what you learned from it, and what you did about it. This section is what makes the piece credible, so I won't guess.</mark>
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: one or two honest sentences.</mark>

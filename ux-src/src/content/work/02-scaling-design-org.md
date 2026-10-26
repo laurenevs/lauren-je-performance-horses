@@ -52,7 +52,3 @@ Design throughput on the teams I lead rose 43% year over year, from 2.1 to 3.0 p
 </figure>
 
 I don't claim the reorganizations caused the increase. The point is that they didn't stop it, and the number was being measured the whole way through, so the claim can be checked.
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: one or two honest sentences.</mark>

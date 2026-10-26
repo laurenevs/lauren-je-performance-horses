@@ -36,7 +36,3 @@ It hasn't been funded. The analysis holds up, and the problem hasn't gone away.
 ## Why it's here
 
 Most portfolios only show wins. Leadership work includes making a case properly and then accepting that it lost to something else, without letting the problem disappear. The numbers are still true.
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: what you'd change about the pitch. Framing, timing, who you brought in, or how you sized the ask.</mark>

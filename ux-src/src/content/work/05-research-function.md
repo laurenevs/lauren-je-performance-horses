@@ -50,7 +50,3 @@ Research output went from 45 studies in one year to 82 the following year, befor
 The second number is the one I care about. Doing more tactical work faster would have been easy to sell and would have kept research in the service desk. The shift in mix means research now shows up before decisions instead of after them.
 
 The operating model also outlived its first year. It is written down in three successive annual strategies, each building on the last rather than replacing it. That is my real test for whether a function exists or is just a group of people with the same job title.
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: one or two honest sentences. What would you change if you built this again?</mark>
