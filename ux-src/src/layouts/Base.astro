@@ -9,10 +9,9 @@ interface Props {
   narrow?: boolean;
   /** Whole page fits one screen with the main content vertically centered */
   screen?: boolean;
-  soundToggle?: boolean;
   giddyEmoji?: boolean;
 }
-const { title, description, current, narrow = false, screen = false, soundToggle = true, giddyEmoji = true } = Astro.props;
+const { title, description, current, narrow = false, screen = false, giddyEmoji = true } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title} · Lauren J. Evans`;
 ---
@@ -43,7 +42,6 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
             <li><a href={`${base}/about/`} aria-current={current === 'about' ? 'page' : undefined}>About</a></li>
           </ul>
         </nav>
-        {soundToggle && <button class="pill ghost" id="sound-toggle" type="button" aria-pressed="true">🔊 Sound on</button>}
         <button class="pill" id="giddyup" type="button">{giddyEmoji ? '🐎 Giddy up' : 'Giddy up'}</button>
       </div>
     </header>
@@ -64,13 +62,8 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
 
   <script>
     // Every emoji is a real button. Sounds are synthesized, so there are no audio files to load.
-    const KEY = 'llh-sound';
-    let soundOn = true;
-    try { soundOn = localStorage.getItem(KEY) !== 'off'; } catch {}
-
     let ctx: AudioContext | null = null;
     const audio = () => {
-      if (!soundOn) return null;
       ctx ??= new AudioContext();
       if (ctx.state === 'suspended') ctx.resume();
       return ctx;
@@ -155,20 +148,10 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
       horse.addEventListener('click', () => { n = (n + 1) % lines.length; bubble.textContent = lines[n]; });
     }
 
-    const toggle = document.getElementById('sound-toggle');
     const status = document.getElementById('sr-status')!;
-    const paint = () => {
-      if (!toggle) return;
-      toggle.setAttribute('aria-pressed', String(soundOn));
-      toggle.textContent = soundOn ? '🔊 Sound on' : '🔈 Sound off';
-    };
-    paint();
-    toggle?.addEventListener('click', () => {
-      soundOn = !soundOn;
-      try { localStorage.setItem(KEY, soundOn ? 'on' : 'off'); } catch {}
-      paint();
-      status.textContent = soundOn ? 'Sound on' : 'Sound off';
-      if (soundOn) blip(4);
+
+    document.querySelectorAll<HTMLAnchorElement>('.email-link').forEach((a) => {
+      a.addEventListener('click', () => { a.href = `mailto:${a.dataset.u}@${a.dataset.d}`; });
     });
 
     const herd = document.querySelector<HTMLElement>('.herd')!;

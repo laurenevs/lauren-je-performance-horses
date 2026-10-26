@@ -27,13 +27,9 @@ I wrote a framework in three parts, each answering a different question a design
 
 **A three-tier model** for how AI capability shows up in the product. It answers: how much is the agent doing here, and how much is the person?
 
-<mark class="todo">NEEDS LAUREN: can the three tiers be described generically? Something like "suggests, acts with approval, acts and reports" would make the figure much stronger. Only if that's safe to share.</mark>
-
 **Six shared primitives**, designed once and reused across all five product lines, so squads don't each invent their own agent vocabulary. It answers: what does this look like, and has someone already designed it?
 
 **Experience principles and a now, next, later prioritization.** It answers: when two good options conflict, which one wins, and does it have to win this quarter? This is the part that lets designers settle tradeoffs in the room instead of escalating them.
-
-<mark class="todo">NEEDS LAUREN: one or two of the principles, in generic wording, if any can be shared. A real principle is more convincing than a description of one.</mark>
 
 <figure>
   <img src="/ux/figures/primitives.svg" alt="Before and after diagram. Before: five product lines, each with its own separate agent vocabulary. After: the same five product lines all built on one shared row of six primitives, within a three-tier model." width="960" height="310" loading="lazy" />
@@ -46,10 +42,6 @@ Designing the primitives once, centrally, was a deliberate trade. Squads lose a 
 
 ## What changed
 
-The framework now guides design direction across all five product lines. It's the clearest example of me setting product direction instead of supporting it.
+The framework now guides design direction across all five product lines. The team aligned around the principles, and the designs got more concrete and more consistent from one product line to the next.
 
-<mark class="todo">NEEDS LAUREN: a concrete signal of adoption you can share. For example, how many lines have shipped using the primitives, or a tradeoff that got settled by the principles without escalating.</mark>
-
-## What I would do differently
-
-<mark class="todo">NEEDS LAUREN: one or two honest sentences.</mark>
+It's the clearest example of me setting product direction instead of supporting it.

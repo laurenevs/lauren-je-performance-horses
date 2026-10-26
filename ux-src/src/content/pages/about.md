@@ -4,7 +4,9 @@ I have an M.S. in Statistics and a B.S. in Applied Mathematics. I came into UX t
 
 That background explains most of how I work. I want a definition before a dashboard, a baseline before a claim, and a median when the data has a long tail. When I say design got faster, I want to be able to show which number moved and where it came from.
 
-Since then I've led teams at Workiva, GitLab and Optro. Today I lead design and research together, in an organization where designers outnumber researchers, and I set product direction across the portfolio. The statistics background is how I lead, not what I do. It's why I instrument the function and argue from evidence. For the last several years the job has been building organizations rather than producing screens: operating models, review systems, strategy and the measurement that holds it together.
+Since then I've led UX teams at Workiva, GitLab and Optro. Most of that time has been in governance, risk and compliance software, with a stretch in developer operations at GitLab. These are complex products used by people whose work has real consequences, and that's where good UX changes the most.
+
+Today I lead design and research together, in an organization where designers outnumber researchers. My focus is the agentic shift: deciding how AI should show up in the product so it changes how people actually do their work, and changing how my own team works along the way. The statistics background is how I lead, not what I do. It's why I tie the team's work to outcomes and can show which numbers moved.
 
 ## How I lead
 
@@ -28,9 +30,7 @@ The specifics depend on the role, but the core doesn't change. I look for people
 
 ## What I'm optimizing for next
 
-A Director or VP of UX role, or Head of Research, at a company that wants the function built and measured. I'm most useful where there's real product complexity, a design or research team that's ready to grow up, and leadership that will act on evidence.
-
-<mark class="todo">NEEDS LAUREN: anything specific about stage, industry, remote or travel that you want a recruiter to know up front.</mark>
+I'm looking for a Head of UX role. I want to lead the function and build a large team. I'm most useful where there's real product complexity, a team that's ready to grow, and leadership that will act on evidence.
 
 ## Outside work
 
@@ -38,6 +38,4 @@ I live in Helena, Montana, and I start and show horses, which explains the domai
 
 ## Get in touch
 
-The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/laurengoodw/).
-
-<mark class="todo">NEEDS LAUREN: add an email address if you want one on the page. A résumé PDF link can go here too.</mark>
+You can reach me on [LinkedIn](https://www.linkedin.com/in/laurengoodw/) or <a href="#" class="email-link" data-u="laurengoodw" data-d="gmail.com">by email</a>.
