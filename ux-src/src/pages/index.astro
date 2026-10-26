@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base
+  title="Home"
+  current="home"
+  narrow
+  screen
+ 
+  giddyEmoji={false}
+  description="Lauren J. Evans leads design and research organizations, builds the systems they run on, and measures whether they work."
+>
+  <section class="home">
+    <h1>Lauren J. Evans</h1>
+    <div class="underline" aria-hidden="true"></div>
+    <p class="line">I lead design and research organizations, build the systems they run on, and measure whether they work.</p>
+    <p class="actions">
+      <a class="primary" href={`${base}/work/`}>See the work →</a>
+      <a class="secondary" href={`${base}/about/`}>About me</a>
+    </p>
+  </section>
+
+  <Fragment slot="footer">
+    <div class="corral">
+      <button
+        class="emo horse"
+        type="button"
+        data-sound="whinny"
+        data-lines={JSON.stringify([
+          "She's open to Head of UX roles. I'm open to carrots.",
+          'Every number on this site is real. So am I.',
+          'Try the Giddy up button. Go on.',
+          'Six case studies. None of them are screens.',
+          'Written from Helena, Montana. Mostly between barn chores.',
+        ])}
+        aria-label="Play a whinny and change what the horse says"
+      >🐴</button>
+      <p class="bubble" aria-live="polite">Hi. I'm the one who picked the domain name.</p>
+    </div>
+  </Fragment>
+</Base>
+
+<style>
+  .home { padding: 96px 0 120px; color: var(--on-sky); }
+  h1 {
+    margin: 0; font-family: var(--font-head); font-weight: 800;
+    font-size: clamp(48px, 9vw, 84px); line-height: 1; letter-spacing: -0.025em;
+  }
+  .underline { width: 56px; height: 5px; border-radius: 3px; margin: 28px 0 32px; }
+  .line { margin: 0; max-width: 640px; font-size: clamp(19px, 2.4vw, 24px); line-height: 1.45; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin: 44px 0 0; }
+  .primary {
+    display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px;
+    background: var(--lime); color: var(--lime-ink); font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+    text-decoration: none;
+  }
+  .primary:hover { filter: brightness(1.04); }
+  .secondary {
+    font-family: var(--font-mono); font-size: 14px; color: var(--on-sky);
+    text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 6px;
+  }
+  .secondary:hover { color: var(--lime); }
+  @media (max-width: 600px) { .home { padding: 56px 0 72px; } }
+  .corral { display: flex; align-items: center; gap: 14px; }
+  .horse { font-size: 44px; }
+  .corral .bubble { margin: 0; text-transform: none; letter-spacing: normal; font-family: var(--font-body); font-size: 15px; }
+</style>

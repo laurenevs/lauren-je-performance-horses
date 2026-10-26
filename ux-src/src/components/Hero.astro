@@ -1,0 +1,27 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  emoji?: string;
+  emojiLabel?: string;
+  tag?: string;
+  tagline?: string;
+  horse: string;
+  horseLines?: string[];
+}
+const { eyebrow, title, emoji, emojiLabel, tag, tagline, horse, horseLines = [] } = Astro.props;
+---
+<section class="hero">
+  <div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}{emoji && <> <button class="emo" type="button" data-note="2" aria-label={`Play a sound: ${emojiLabel}`}>{emoji}</button></>}</h1>
+    <div class="underline" aria-hidden="true"></div>
+    {tag && <p class="tag">{tag}</p>}
+    {tagline && <p class="tagline">{tagline}</p>}
+    <slot />
+  </div>
+  <div class="mascot">
+    <button class="emo" type="button" data-sound="whinny" data-lines={JSON.stringify(horseLines)} aria-label="Play a whinny and change what the horse says">🐴</button>
+    <p class="bubble" aria-live="polite">{horse}</p>
+  </div>
+</section>

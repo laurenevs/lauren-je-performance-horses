@@ -1,0 +1,13 @@
+---
+interface Props { items: { emoji: string; value: string; label: string }[] }
+const { items } = Astro.props;
+---
+<ul class="stats">
+  {items.map((s, i) => (
+    <li class="card stat">
+      <button class="emo" type="button" data-note={i + 3} aria-label="Play a sound">{s.emoji}</button>
+      <span class="value">{s.value}</span>
+      <span class="label">{s.label}</span>
+    </li>
+  ))}
+</ul>

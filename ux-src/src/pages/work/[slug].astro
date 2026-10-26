@@ -1,0 +1,33 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Stats from '../../components/Stats.astro';
+import { allWork, slugOf, type Work } from '../../lib/work';
+
+export async function getStaticPaths() {
+  const work = await allWork();
+  return work.map((entry, i) => ({
+    params: { slug: slugOf(entry) },
+    props: { entry, prev: work[i - 1], next: work[i + 1] },
+  }));
+}
+
+interface Props { entry: Work; prev?: Work; next?: Work }
+const { entry, prev, next } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const eyebrow = d.era === 'earlier' ? `Earlier work · ${d.place} · ${d.theme}` : `Case study 0${d.order} · ${d.theme}`;
+---
+<Base title={d.title} current="work" description={d.summary}>
+  <Hero eyebrow={eyebrow} title={d.title} emoji={d.emoji} emojiLabel={d.theme} tagline={d.summary} horse={d.horse} />
+  {d.stats.length > 0 && <Stats items={d.stats} />}
+  <article class="card article">
+    <div class="prose"><Content /></div>
+  </article>
+  <nav class="pager" aria-label="More case studies">
+    {prev ? <a href={`${base}/work/${slugOf(prev)}/`}><span class="mono-label">Previous</span>{prev.data.title}</a> : <a href={`${base}/work/`}><span class="mono-label">Back</span>All work</a>}
+    {next ? <a class="next" href={`${base}/work/${slugOf(next)}/`}><span class="mono-label">Next</span>{next.data.title}</a> : <a class="next" href={`${base}/about/`}><span class="mono-label">Next</span>About me</a>}
+  </nav>
+</Base>
