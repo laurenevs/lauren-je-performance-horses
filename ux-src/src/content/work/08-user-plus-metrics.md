@@ -31,7 +31,7 @@ Rollout followed the same order as the argument: research leads, then UX leaders
 
 ## What changed
 
-<mark class="todo">NEEDS LAUREN: adoption result. The deck aimed for product leadership support, a pilot with 3 teams, and eventually all of R&D. Where did it land?</mark>
+Teams set success metrics up front and measured them over time, so they could see whether what they built had the impact they intended. We piloted it, then rolled it out to the entire organization.
 
 ## Where it shows up now
 

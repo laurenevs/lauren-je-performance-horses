@@ -36,7 +36,7 @@ The agentic patterns in the [experience framework](/ux/work/agentic-framework/) 
 
 **Design practice.** I backed an internal AI-assisted prototyping capability that lets designers build testable, production-shaped prototypes directly, instead of handing static files to engineers. It shortens the path from a concept to customer feedback, and from customer feedback into engineering. My job was to protect the time to build it and then treat it as real tooling, not a novelty.
 
-<mark class="todo">NEEDS LAUREN: anything measurable here? For example, the share of projects prototyped this way, or time from concept to a testable prototype. Leave this out if there's nothing you can publish.</mark>
+It paid off three ways. It saved money: engineers and product managers no longer need full design tool licenses, we're on a path to not relying on Figma at all, and we retired a separate paid prototyping product. It made the work more consistent, because the design system is built into every prototype. And it made the team faster at producing artifacts.
 
 **Research practice.** One researcher built a tool for synthetic usability evaluation as a side project. I took it from one person's laptop to a distributed internal tool, installed across the team with versioned releases, and sponsored it to product leadership for use beyond UX. It's a first pass that catches obvious problems before real participants spend time on them, not a replacement for them.
 
@@ -52,4 +52,4 @@ I built it myself on purpose. It's hard to ask a team to change how they work wi
 
 Customers see one consistent set of agentic patterns across five product lines. Designers put testable prototypes in front of customers and engineers instead of static files. The synthetic evaluation tool is installed across the team and has a path to product leadership. Every research plan starts with what existing data already answers. The digests run every week without anyone assembling them, and duplicated work surfaces early.
 
-<mark class="todo">NEEDS LAUREN: any number you can publish on adoption or time saved. If not, this section stands as written.</mark>
+Designers now build designs agentically, and fast. The team turns ideas around quickly, works through many of them, and converges on the right one sooner, for less money than the old way of working.

@@ -19,19 +19,17 @@ Each researcher recruited participants for their own studies. It worked, in the 
 
 ## What I did
 
-I measured it. Recruitment was taking 30 to 40% of researcher time. On a team whose value comes from judgment, a third of the hours were going to scheduling and screening.
-
-<mark class="todo">NEEDS LAUREN: how you measured it, in a sentence. Time logs, a sampling exercise, ticket data?</mark>
+I measured it. Every research project is tracked in the ticketing system along with the time it spends in each status, the same data behind the [design and research scorecard](/ux/work/instrumenting-design/). Recruiting was the biggest time sink and the most common blocker, taking 30 to 40% of researcher time. On a team whose value comes from judgment, a third of the hours were going to scheduling and screening.
 
 Looking closely at the recruitment process also surfaced a material data privacy exposure in how participant data was being handled. That made it a risk problem as well as an efficiency problem.
 
-I put both into a business case for a research operations investment: what recruitment cost in researcher time, what that time could go to instead, and what the privacy exposure meant for the company.
+I put both into a proposal for a research operations investment, with concrete solutions for recruiting: what recruitment cost in researcher time, what that time could go to instead, and what the privacy exposure meant for the company.
 
 ## What happened
 
-It hasn't been funded. The analysis holds up, and the problem hasn't gone away.
+It hasn't been funded. A leadership change and budget constraints stalled it. The analysis holds up, and the problem hasn't gone away.
 
-<mark class="todo">NEEDS LAUREN: what you understand the reason to be, at whatever level of detail you're comfortable sharing, and anything you did in the meantime to reduce the exposure or the time cost.</mark>
+So we worked around it with what didn't cost money. We started building an internal pool of participants to recruit from, so researchers aren't starting from zero on every study.
 
 ## Why it's here
 

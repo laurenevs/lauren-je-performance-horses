@@ -27,13 +27,11 @@ I built a scorecard from scratch with seven defined measures. Each one has a wri
 
 The two design measures, throughput and time in design execution, were the hardest to define, so they got the most attention. Research is easier to count, because a study has a plan, a start and a readout. Design work doesn't arrive in units that clean. Before either number could exist, the definition had to settle questions like what counts as a project, when execution starts and when it ends.
 
-<mark class="todo">NEEDS LAUREN: how you settled those definitions, in a sentence or two, if it's safe to describe generically.</mark>
+I settled them with my cross-functional peers in product and engineering by agreeing on outcomes first. I didn't want volume metrics that look busy and mean nothing. The point was to measure whether the team was getting better.
 
 **Throughput** is projects completed per designer. **Time in design execution** is reported as a median rather than a mean. Project durations have a long right tail, and a mean would let two stuck projects tell the story for everyone else.
 
-The research rows, including studies delivered and the share that are strategic, came from the intake and instruments described in [Building a research function](/ux/work/research-function/).
-
-<mark class="todo">NEEDS LAUREN: list the remaining measures by generic name if you're comfortable, or confirm I should leave them unlisted.</mark>
+The research rows are the share of studies that are strategic, the time it takes to complete a study, and the number of studies completed in the year. They come from the intake and instruments described in [Building a research function](/ux/work/research-function/).
 
 ### The gate
 
@@ -56,4 +54,8 @@ The scorecard also outgrew design and research. It is now one of the strategic p
 
 ## The metric that went the wrong way
 
-<mark class="todo">NEEDS LAUREN: which measure moved in the wrong direction, what you learned from it, and what you did about it. This section is what makes the piece credible, so I won't guess.</mark>
+Two of them, at first.
+
+**Design end-to-end time was inflated by discovery.** Early, open-ended exploration was being counted as design execution, so the number made design look slower than it was and hid how long discovery took. I split discovery and design into separate stages. Time in design execution now measures execution, and discovery has its own number instead of hiding inside someone else's.
+
+**Research end-to-end time went up instead of down.** The cause was recruiting. Studies were sitting and waiting on participants. That finding became the evidence for [the case that didn't get funded](/ux/work/the-unfunded-case/).
