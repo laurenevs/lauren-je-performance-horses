@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { Content } from '../content/pages/about.md';
+---
+<Base title="About" current="about" description="Statistician turned UX leader. How I lead, what I look for in a team, and what I want to do next.">
+  <Hero
+    eyebrow="About"
+    title="Lauren J. Evans"
+    emoji="📈"
+    emojiLabel="chart"
+    tag="Helena, Montana 🏔️"
+    tagline="Statistics first, then research, then building the organizations that do it."
+    horse="Yes, the domain is about horses. You found the other half."
+    horseLines={["Patience, consistency, clear cues. Works on horses and on design reviews."]}
+  />
+  <article class="card article">
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import WorkRows from '../components/WorkRows.astro';
+import { allWork } from '../lib/work';
+
+const work = await allWork();
+const current = work.filter((w) => w.data.era === 'current');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title="Home" current="home" description="Lauren J. Evans builds design and research functions, the systems they run on, and the measures that show whether they work.">
+  <Hero
+    eyebrow="Director, UX Solutions · Helena, Montana"
+    title="Lauren J. Evans"
+    emoji="🐎"
+    emojiLabel="horse"
+    tag="UX leadership, measured 📈"
+    tagline="Statistician by training. Builds the function, then measures it."
+    horse="Five case studies. None of them are screens."
+    horseLines={[
+      "I've been told the statistician part is not a phase.",
+      "Go on, click the other emojis. They all do something.",
+      "Every number on this page is real. The horses are also real.",
+    ]}
+  >
+    <p class="lede">
+      <strong>I build design and research functions, the systems they run on, and the measures that show whether they work.</strong>{' '}
+      I lead about 15 designers and researchers across an enterprise B2B product portfolio, and right now most of that work is about changing how the org works with AI. I came to UX through research and statistics, so I'd rather show you a number than tell you a story.
+    </p>
+    <p class="callout"><span aria-hidden="true">🎯</span> Open to Director and VP of UX, and Head of Research roles.</p>
+  </Hero>
+
+  <p class="card banner"><span aria-hidden="true">🌤️</span> 10+ years in UX. Previously GitLab and Workiva. Currently remote from Montana.</p>
+
+  <h2 class="sr-only">Proof points</h2>
+  <Stats items={[
+    { emoji: '📚', value: '45 → 82', label: 'Studies delivered, one year to the next (year to date)' },
+    { emoji: '🎯', value: '11% → 39%', label: 'Share of studies that were strategic' },
+    { emoji: '⚙️', value: '+43%', label: 'Design throughput, 2.1 to 3.0 projects per designer' },
+    { emoji: '⏱️', value: '42 days', label: 'Median time in design execution' },
+  ]} />
+
+  <div class="cols">
+    <section class="card panel" aria-labelledby="work-h">
+      <div class="panel-head">
+        <h2 id="work-h"><button class="emo" type="button" data-note="0" aria-label="Play a sound">🗺️</button> Selected work</h2>
+        <span class="mono-label">Functions, not screens</span>
+      </div>
+      <p class="note"><span class="dot" aria-hidden="true"></span><span>Five pieces. Each covers what was true before, what I did, what changed, and what I'd do differently.</span></p>
+      <WorkRows items={current} />
+      <p style="margin: 4px 0 16px;"><a href={`${base}/work/`}>All work, including earlier pieces from GitLab and Workiva</a></p>
+    </section>
+
+    <section class="card panel" aria-labelledby="career-h">
+      <div class="panel-head">
+        <h2 id="career-h"><button class="emo" type="button" data-note="5" aria-label="Play a sound">🧭</button> Career</h2>
+        <span class="mono-label">Mountain time</span>
+      </div>
+      <ol class="rows">
+        <li class="highlight"><span class="when">Next</span><div><span class="what">Director or VP of UX, Head of Research</span><p class="why">Somewhere that wants a function built.</p></div></li>
+        <li><span class="when">2026 → now</span><div><span class="what">Director, UX Solutions</span><p class="why">Optro. Design and research for the full product portfolio.</p></div></li>
+        <li><span class="when">2023 → 2026</span><div><span class="what">Senior Manager, Research and Design</span><p class="why">Optro. Built the research function, led design for the largest product area.</p></div></li>
+        <li><span class="when">2021 → 2023</span><div><span class="what">UX Research Manager</span><p class="why">GitLab. Distributed research team across several product areas.</p></div></li>
+        <li class="dim"><span class="when">2015 → 2021</span><div><span class="what">Researcher to Research Manager</span><p class="why">Workiva. Six years, three roles.</p></div></li>
+        <li class="dim"><span class="when">Before</span><div><span class="what">M.S. Statistics, B.S. Applied Mathematics</span><p class="why">Montana State, Western Washington.</p></div></li>
+      </ol>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,182 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  current?: 'home' | 'work' | 'about';
+}
+const { title, description, current } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title} · Lauren J. Evans`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="topbar">
+      <a href={`${base}/`}>Lauren J. Evans · UX leadership</a>
+      <div class="right">
+        <nav aria-label="Main">
+          <ul>
+            <li><a href={`${base}/`} aria-current={current === 'home' ? 'page' : undefined}>Home</a></li>
+            <li><a href={`${base}/work/`} aria-current={current === 'work' ? 'page' : undefined}>Work</a></li>
+            <li><a href={`${base}/about/`} aria-current={current === 'about' ? 'page' : undefined}>About</a></li>
+          </ul>
+        </nav>
+        <button class="pill ghost" id="sound-toggle" type="button" aria-pressed="true">🔊 Sound on</button>
+        <button class="pill" id="giddyup" type="button">🐎 Giddy up</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site">
+      <span>Helena, Montana · Mountain time</span>
+      <span><a href="https://www.linkedin.com/in/laurengoodw/">LinkedIn</a></span>
+    </footer>
+  </div>
+  <div class="herd" aria-hidden="true"></div>
+  <p class="sr-only" aria-live="polite" id="sr-status"></p>
+
+  <script>
+    // Every emoji is a real button. Sounds are synthesized, so there are no audio files to load.
+    const KEY = 'llh-sound';
+    let soundOn = true;
+    try { soundOn = localStorage.getItem(KEY) !== 'off'; } catch {}
+
+    let ctx: AudioContext | null = null;
+    const audio = () => {
+      if (!soundOn) return null;
+      ctx ??= new AudioContext();
+      if (ctx.state === 'suspended') ctx.resume();
+      return ctx;
+    };
+
+    // Major pentatonic, so any run of clicks sounds pleasant
+    const SCALE = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66, 1318.51];
+
+    function blip(note: number) {
+      const a = audio(); if (!a) return;
+      const t = a.currentTime, f = SCALE[note % SCALE.length];
+      const o = a.createOscillator(), g = a.createGain();
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(f, t);
+      o.frequency.exponentialRampToValueAtTime(f * 1.5, t + 0.09);
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.22, t + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+      o.connect(g).connect(a.destination);
+      o.start(t); o.stop(t + 0.3);
+    }
+
+    function whinny() {
+      const a = audio(); if (!a) return;
+      const t = a.currentTime, d = 1.1;
+      const o = a.createOscillator(), g = a.createGain(), lp = a.createBiquadFilter();
+      const lfo = a.createOscillator(), lfoGain = a.createGain();
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(700, t);
+      o.frequency.linearRampToValueAtTime(1150, t + 0.18);
+      o.frequency.exponentialRampToValueAtTime(420, t + d);
+      lfo.frequency.setValueAtTime(14, t);
+      lfo.frequency.linearRampToValueAtTime(9, t + d);
+      lfoGain.gain.value = 70;
+      lfo.connect(lfoGain).connect(o.frequency);
+      lp.type = 'lowpass'; lp.frequency.value = 2200;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.12, t + 0.05);
+      g.gain.setValueAtTime(0.12, t + d * 0.6);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+      o.connect(lp).connect(g).connect(a.destination);
+      o.start(t); lfo.start(t); o.stop(t + d); lfo.stop(t + d);
+    }
+
+    function clipclop(beats = 8) {
+      const a = audio(); if (!a) return;
+      const len = Math.floor(a.sampleRate * 0.04);
+      const buf = a.createBuffer(1, len, a.sampleRate);
+      const data = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+      for (let i = 0; i < beats; i++) {
+        const t = a.currentTime + i * 0.17 + (i % 2) * 0.03;
+        const s = a.createBufferSource(), bp = a.createBiquadFilter(), g = a.createGain();
+        s.buffer = buf;
+        bp.type = 'bandpass'; bp.frequency.value = i % 2 ? 900 : 1500; bp.Q.value = 4;
+        g.gain.value = 0.9;
+        s.connect(bp).connect(g).connect(a.destination);
+        s.start(t);
+      }
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pop = (el: Element) => {
+      if (reduceMotion) return;
+      el.classList.remove('pop'); void (el as HTMLElement).offsetWidth; el.classList.add('pop');
+    };
+
+    document.querySelectorAll<HTMLButtonElement>('.emo').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        pop(btn);
+        if (btn.dataset.sound === 'whinny') whinny();
+        else blip(Number(btn.dataset.note ?? i));
+      });
+    });
+
+    // The horse cycles through its lines
+    const horse = document.querySelector<HTMLButtonElement>('[data-sound="whinny"]');
+    const bubble = document.querySelector<HTMLElement>('.bubble');
+    if (horse && bubble) {
+      const lines = [bubble.textContent ?? '', ...JSON.parse(horse.dataset.lines ?? '[]')];
+      let n = 0;
+      horse.addEventListener('click', () => { n = (n + 1) % lines.length; bubble.textContent = lines[n]; });
+    }
+
+    const toggle = document.getElementById('sound-toggle')!;
+    const status = document.getElementById('sr-status')!;
+    const paint = () => {
+      toggle.setAttribute('aria-pressed', String(soundOn));
+      toggle.textContent = soundOn ? '🔊 Sound on' : '🔈 Sound off';
+    };
+    paint();
+    toggle.addEventListener('click', () => {
+      soundOn = !soundOn;
+      try { localStorage.setItem(KEY, soundOn ? 'on' : 'off'); } catch {}
+      paint();
+      status.textContent = soundOn ? 'Sound on' : 'Sound off';
+      if (soundOn) blip(4);
+    });
+
+    const herd = document.querySelector<HTMLElement>('.herd')!;
+    document.getElementById('giddyup')!.addEventListener('click', () => {
+      clipclop();
+      status.textContent = 'Horses galloping across the page';
+      if (reduceMotion) return;
+      for (let i = 0; i < 6; i++) {
+        const h = document.createElement('span');
+        h.textContent = '🐎';
+        h.style.top = `${10 + Math.random() * 75}vh`;
+        h.style.animationDuration = `${1.6 + Math.random() * 1.2}s`;
+        h.style.animationDelay = `${i * 0.12}s`;
+        h.addEventListener('animationend', () => h.remove());
+        herd.appendChild(h);
+      }
+    });
+  </script>
+</body>
+</html>
