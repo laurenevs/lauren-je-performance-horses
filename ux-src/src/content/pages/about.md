@@ -24,7 +24,7 @@ A few things the case studies show, in case you're skimming:
 
 ## What I look for in a team
 
-<mark class="todo">NEEDS LAUREN: what you hire for, and what tends to make a team work for you.</mark>
+The specifics depend on the role, but the core doesn't change. I look for people who will help build the culture I described above, on a strong team with high expectations of itself. I want a growth mindset, and short toes: people who don't take feedback personally, so we can disagree openly and keep moving.
 
 ## What I'm optimizing for next
 
