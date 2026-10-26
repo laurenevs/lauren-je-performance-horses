@@ -1,37 +1,45 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
-import WorkRows from '../../components/WorkRows.astro';
+import WorkCards from '../../components/WorkCards.astro';
 import { allWork } from '../../lib/work';
 
 const work = await allWork();
 const current = work.filter((w) => w.data.era === 'current');
 const earlier = work.filter((w) => w.data.era === 'earlier');
 ---
-<Base title="Work" current="work" description="Case studies in building research and design functions, measuring them, and changing how they work with AI.">
+<Base title="Work" current="work" narrow soundToggle={false} description="Case studies in setting product direction, building and measuring design and research organizations, and changing how they work with AI.">
   <Hero
     eyebrow="Work"
     title="Case studies"
-    emoji="🗂️"
-    emojiLabel="folder"
     tagline="Organizations, operating systems, strategy and measurement. Screens show up only as evidence."
     horse="Before, what I did, what changed, what I'd redo. Every time."
   />
-  <div class="cols" style="grid-template-columns: 1fr;">
-    <section class="card panel" aria-labelledby="now-h">
-      <div class="panel-head">
-        <h2 id="now-h"><button class="emo" type="button" data-note="1" aria-label="Play a sound">🌱</button> Recent</h2>
-        <span class="mono-label">Optro, 2023 to now. Design and strategy first</span>
-      </div>
-      <WorkRows items={current} />
-    </section>
-    <section class="card panel" aria-labelledby="earlier-h">
-      <div class="panel-head">
-        <h2 id="earlier-h"><button class="emo" type="button" data-note="6" aria-label="Play a sound">🌳</button> Earlier</h2>
-        <span class="mono-label">GitLab and Workiva</span>
-      </div>
-      <p class="note"><span class="dot" aria-hidden="true"></span><span>Shorter pieces. Most of what I do now started here.</span></p>
-      <WorkRows items={earlier} />
-    </section>
-  </div>
+
+  <section class="group" aria-labelledby="recent-h">
+    <div class="group-head">
+      <h2 id="recent-h"><span aria-hidden="true">🌱 </span>Recent</h2>
+      <span class="label">Optro, 2023 to now</span>
+    </div>
+    <WorkCards items={current} />
+  </section>
+
+  <section class="group earlier" aria-labelledby="earlier-h">
+    <div class="group-head">
+      <h2 id="earlier-h"><span aria-hidden="true">🌳 </span>Earlier</h2>
+      <span class="label">GitLab and Workiva</span>
+    </div>
+    <p class="intro">Shorter pieces. Most of what I do now started here.</p>
+    <WorkCards items={earlier} size="small" />
+  </section>
 </Base>
+
+<style>
+  .group { color: var(--on-sky); }
+  .earlier { padding: 72px 0 112px; }
+  .group-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .earlier .group-head { margin-bottom: 8px; }
+  h2 { margin: 0; font-family: var(--font-head); font-weight: 700; font-size: 28px; }
+  .label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .intro { margin: 0 0 20px; font-size: 16px; }
+</style>

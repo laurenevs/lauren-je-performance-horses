@@ -4,6 +4,8 @@ order: 6
 emoji: 🧾
 theme: Investment case
 summary: I measured what participant recruitment was costing, surfaced a privacy exposure in how participant data was handled, and proposed an investment. It hasn't been funded.
+card: "The case that didn't get funded"
+hook: "I measured what participant recruitment was costing and surfaced a privacy exposure. It hasn't been funded."
 horse: Not every good argument wins. This one's still a good argument.
 stats:
   - { emoji: ⌛, value: "30 to 40%", label: "Share of researcher time spent on recruitment" }

@@ -4,6 +4,8 @@ order: 2
 emoji: 🏗️
 theme: Org design
 summary: From one product pillar to the whole portfolio, through three reorganizations, with design throughput up 43%. The org chart is the least interesting part. What makes delivery survive the change is the rest.
+card: "Three reorgs, 43% more throughput"
+hook: "The org chart is the least interesting part. What makes delivery survive the change is the rest."
 horse: Three reorgs. The routines kept running, and so did the throughput.
 stats:
   - { emoji: ⚙️, value: "+43%", label: "Design throughput, 2.1 to 3.0 projects per designer" }

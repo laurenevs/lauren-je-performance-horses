@@ -5,8 +5,14 @@ interface Props {
   title: string;
   description: string;
   current?: 'home' | 'work' | 'about';
+  /** 1000px content width, as in the Home and Work designs */
+  narrow?: boolean;
+  /** Whole page fits one screen with the main content vertically centered */
+  screen?: boolean;
+  soundToggle?: boolean;
+  giddyEmoji?: boolean;
 }
-const { title, description, current } = Astro.props;
+const { title, description, current, narrow = false, screen = false, soundToggle = true, giddyEmoji = true } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title} · Lauren J. Evans`;
 ---
@@ -22,11 +28,11 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
   <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class:list={{ screen }}>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="wrap">
+  <div class:list={["wrap", { narrow }]}>
     <header class="topbar">
       <a href={`${base}/`}>Lauren J. Evans · UX leadership</a>
       <div class="right">
@@ -37,8 +43,8 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
             <li><a href={`${base}/about/`} aria-current={current === 'about' ? 'page' : undefined}>About</a></li>
           </ul>
         </nav>
-        <button class="pill ghost" id="sound-toggle" type="button" aria-pressed="true">🔊 Sound on</button>
-        <button class="pill" id="giddyup" type="button">🐎 Giddy up</button>
+        {soundToggle && <button class="pill ghost" id="sound-toggle" type="button" aria-pressed="true">🔊 Sound on</button>}
+        <button class="pill" id="giddyup" type="button">{giddyEmoji ? '🐎 Giddy up' : 'Giddy up'}</button>
       </div>
     </header>
 
@@ -47,8 +53,10 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
     </main>
 
     <footer class="site">
-      <span>Helena, Montana · Mountain time</span>
-      <span><a href="https://www.linkedin.com/in/laurengoodw/">LinkedIn</a></span>
+      <slot name="footer">
+        <span>Helena, Montana · Mountain time</span>
+        <span><a href="https://www.linkedin.com/in/laurengoodw/">LinkedIn</a></span>
+      </slot>
     </footer>
   </div>
   <div class="herd" aria-hidden="true"></div>
@@ -147,14 +155,15 @@ const pageTitle = title === 'Home' ? 'Lauren J. Evans, UX leadership' : `${title
       horse.addEventListener('click', () => { n = (n + 1) % lines.length; bubble.textContent = lines[n]; });
     }
 
-    const toggle = document.getElementById('sound-toggle')!;
+    const toggle = document.getElementById('sound-toggle');
     const status = document.getElementById('sr-status')!;
     const paint = () => {
+      if (!toggle) return;
       toggle.setAttribute('aria-pressed', String(soundOn));
       toggle.textContent = soundOn ? '🔊 Sound on' : '🔈 Sound off';
     };
     paint();
-    toggle.addEventListener('click', () => {
+    toggle?.addEventListener('click', () => {
       soundOn = !soundOn;
       try { localStorage.setItem(KEY, soundOn ? 'on' : 'off'); } catch {}
       paint();

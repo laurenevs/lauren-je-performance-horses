@@ -4,6 +4,8 @@ order: 1
 emoji: 🧩
 theme: Product direction
 summary: A three-tier model for how AI shows up in a complex enterprise product, six shared primitives reused across five product lines, and the principles and priorities designers use to settle tradeoffs without escalating.
+card: "One framework, five product lines"
+hook: "A three-tier model for how AI shows up in a complex enterprise product, and six shared primitives designers reuse."
 horse: Five product lines, one vocabulary. Fewer surprises for everybody.
 stats:
   - { emoji: 🪜, value: "3 tiers", label: "For how AI capability shows up in the product" }

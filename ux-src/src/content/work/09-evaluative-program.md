@@ -6,6 +6,8 @@ place: Workiva
 emoji: 🧪
 theme: Research ops
 summary: Ease of use was dragging satisfaction down and nobody was testing designs. We set usability measures, built templates and grew testing until it was standard across R&D.
+card: "Usability testing from zero"
+hook: "Nobody was testing designs. We grew it until it was standard across R&D."
 horse: Zero usability tests is a number. Just not a good one.
 ---
 

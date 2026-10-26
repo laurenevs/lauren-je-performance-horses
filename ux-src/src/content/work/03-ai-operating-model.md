@@ -4,6 +4,8 @@ order: 3
 emoji: 🤖
 theme: AI practice
 summary: Three levels at once. The product's agentic patterns, how designers and researchers do the work, and the operating layer I built for myself.
+card: "AI, three levels at once"
+hook: "The product's agentic patterns, how designers and researchers work, and the operating layer I built for myself."
 horse: Status reports now write themselves. I mostly use the time for horses.
 stats:
   - { emoji: 🎨, value: "Prototypes", label: "Testable and production-shaped, built directly by designers" }

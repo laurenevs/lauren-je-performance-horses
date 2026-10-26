@@ -10,6 +10,9 @@ const work = defineCollection({
     emoji: z.string(),
     theme: z.string(),
     summary: z.string(),
+    // Shorter title and one-line hook for the Work index cards; the case page keeps `title`
+    card: z.string(),
+    hook: z.string(),
     horse: z.string(),
     era: z.enum(['current', 'earlier']).default('current'),
     place: z.string().optional(),

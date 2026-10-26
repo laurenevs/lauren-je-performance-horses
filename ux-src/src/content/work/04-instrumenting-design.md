@@ -4,6 +4,8 @@ order: 4
 emoji: 📏
 theme: Measurement
 summary: Seven defined measures that refresh monthly from source systems and publish themselves, with a data-quality gate that refuses to publish a soft number.
+card: "Metrics that refuse a soft number"
+hook: "Seven defined measures that refresh monthly from source systems and publish themselves."
 horse: If the data is bad, the scorecard stays in the barn.
 stats:
   - { emoji: ⚙️, value: "2.1 → 3.0", label: "Projects per designer, a 43% year over year increase" }

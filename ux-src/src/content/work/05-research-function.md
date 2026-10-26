@@ -4,6 +4,8 @@ order: 5
 emoji: 🔬
 theme: Org building
 summary: Two researchers taking requests became six embedded with product teams. The headcount is the least interesting part. The infrastructure is why it stuck.
+card: "From two researchers to six"
+hook: "Two researchers taking requests became six embedded with product teams. The infrastructure is why it stuck."
 horse: The team tripled. The paperwork is why it stayed tripled.
 stats:
   - { emoji: 📚, value: "45 → 82", label: "Studies per year, the following year still in progress" }

@@ -1,70 +1,52 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
-import Stats from '../components/Stats.astro';
-import WorkRows from '../components/WorkRows.astro';
-import { allWork } from '../lib/work';
 
-const work = await allWork();
-const current = work.filter((w) => w.data.era === 'current');
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Base title="Home" current="home" description="Lauren J. Evans leads a design-majority UX organization, sets product direction, and measures whether it works.">
-  <Hero
-    eyebrow="Director, UX Solutions · Helena, Montana"
-    title="Lauren J. Evans"
-    emoji="🐎"
-    emojiLabel="horse"
-    tag="UX leadership, measured 📈"
-    tagline="Leads design and research. Sets the direction, builds the operating system, measures the result."
-    horse="Six case studies. None of them are screens."
-    horseLines={[
-      "I've been told the statistician part is not a phase.",
-      "Go on, click the other emojis. They all do something.",
-      "Every number on this page is real. The horses are also real.",
-    ]}
-  >
-    <p class="lede">
-      <strong>I lead design and research for an entire enterprise product portfolio, about 15 people, most of them designers.</strong>{' '}
-      I set product direction, including how AI shows up across five product lines, and I build the operating systems the org runs on. I trained as a statistician, which is why I measure the function and argue from evidence. I'd rather show you a number than tell you a story.
+<Base
+  title="Home"
+  current="home"
+  narrow
+  screen
+  soundToggle={false}
+  giddyEmoji={false}
+  description="Lauren J. Evans leads design and research organizations, builds the systems they run on, and measures whether they work."
+>
+  <section class="home">
+    <h1>Lauren J. Evans</h1>
+    <div class="underline" aria-hidden="true"></div>
+    <p class="line">I lead design and research organizations, build the systems they run on, and measure whether they work.</p>
+    <p class="actions">
+      <a class="primary" href={`${base}/work/`}>See the work →</a>
+      <a class="secondary" href={`${base}/about/`}>About me</a>
     </p>
-    <p class="callout"><span aria-hidden="true">🎯</span> Open to Director and VP of UX, and Head of Research roles.</p>
-  </Hero>
+  </section>
 
-  <p class="card banner"><span aria-hidden="true">🌤️</span> 10+ years in UX. Previously GitLab and Workiva. Currently remote from Montana.</p>
-
-  <h2 class="sr-only">Proof points</h2>
-  <Stats items={[
-    { emoji: '⚙️', value: '+43%', label: 'Design throughput, 2.1 to 3.0 projects per designer' },
-    { emoji: '⏱️', value: '42 days', label: 'Median time in design execution' },
-    { emoji: '🧩', value: '5 lines', label: 'Product lines guided by one agentic framework I authored' },
-    { emoji: '🎯', value: '11% → 39%', label: 'Share of research studies that were strategic, then and now' },
-  ]} />
-
-  <div class="cols">
-    <section class="card panel" aria-labelledby="work-h">
-      <div class="panel-head">
-        <h2 id="work-h"><button class="emo" type="button" data-note="0" aria-label="Play a sound">🗺️</button> Selected work</h2>
-        <span class="mono-label">Functions, not screens</span>
-      </div>
-      <p class="note"><span class="dot" aria-hidden="true"></span><span>Six pieces, design and strategy first. Each covers what was true before, what I did, what changed, and what I'd do differently.</span></p>
-      <WorkRows items={current} />
-      <p style="margin: 4px 0 16px;"><a href={`${base}/work/`}>All work, including earlier pieces from GitLab and Workiva</a></p>
-    </section>
-
-    <section class="card panel" aria-labelledby="career-h">
-      <div class="panel-head">
-        <h2 id="career-h"><button class="emo" type="button" data-note="5" aria-label="Play a sound">🧭</button> Career</h2>
-        <span class="mono-label">Mountain time</span>
-      </div>
-      <ol class="rows">
-        <li class="highlight"><span class="when">Next</span><div><span class="what">Director or VP of UX, Head of Research</span><p class="why">Somewhere that wants a function built.</p></div></li>
-        <li><span class="when">2026 → now</span><div><span class="what">Director, UX Solutions</span><p class="why">Optro. Design and research for the full product portfolio.</p></div></li>
-        <li><span class="when">2023 → 2026</span><div><span class="what">Senior Manager, Research and Design</span><p class="why">Optro. Led design for the largest product area and built research alongside it.</p></div></li>
-        <li><span class="when">2021 → 2023</span><div><span class="what">UX Research Manager</span><p class="why">GitLab. Distributed research team across several product areas.</p></div></li>
-        <li class="dim"><span class="when">2015 → 2021</span><div><span class="what">Researcher to Research Manager</span><p class="why">Workiva. Six years, three roles.</p></div></li>
-        <li class="dim"><span class="when">Before</span><div><span class="what">M.S. Statistics, B.S. Applied Mathematics</span><p class="why">Montana State, Western Washington.</p></div></li>
-      </ol>
-    </section>
-  </div>
+  <Fragment slot="footer">
+    <span>Director, UX Solutions · Helena, Montana</span>
+    <span>Open to Director / VP of UX and Head of Research roles</span>
+  </Fragment>
 </Base>
+
+<style>
+  .home { padding: 96px 0 120px; color: var(--on-sky); }
+  h1 {
+    margin: 0; font-family: var(--font-head); font-weight: 800;
+    font-size: clamp(48px, 9vw, 84px); line-height: 1; letter-spacing: -0.025em;
+  }
+  .underline { width: 56px; height: 5px; border-radius: 3px; margin: 28px 0 32px; }
+  .line { margin: 0; max-width: 640px; font-size: clamp(19px, 2.4vw, 24px); line-height: 1.45; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin: 44px 0 0; }
+  .primary {
+    display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px;
+    background: var(--lime); color: var(--lime-ink); font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+    text-decoration: none;
+  }
+  .primary:hover { filter: brightness(1.04); }
+  .secondary {
+    font-family: var(--font-mono); font-size: 14px; color: var(--on-sky);
+    text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 6px;
+  }
+  .secondary:hover { color: var(--lime); }
+  @media (max-width: 600px) { .home { padding: 56px 0 72px; } }
+</style>

@@ -6,6 +6,8 @@ place: Workiva
 emoji: 📐
 theme: Measurement
 summary: Product teams defined success inconsistently, if at all, and rarely checked back. A plug-and-play framework made success metrics standard and gave them a follow-up date.
+card: "Success metrics with a follow-up date"
+hook: "USER+, a plug-and-play framework that made success metrics standard."
 horse: Twelve thousand events is not a goal. Ask me how I know.
 ---
 

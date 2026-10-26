@@ -6,6 +6,8 @@ place: GitLab
 emoji: 🧮
 theme: Operating model
 summary: Researchers spread across too many stakeholders, all of it reactive. A shared calculator and a quarterly plan turned "can you just" into a conversation with data behind it.
+card: "Teaching a team to say no"
+hook: "A shared calculator turned \"can you just\" into a conversation with data behind it."
 horse: You can't do it all. You can pick on purpose.
 ---
 

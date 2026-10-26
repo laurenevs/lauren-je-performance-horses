@@ -1,14 +1,15 @@
-/* Two colors plus neutrals: the blue-to-lavender sky, and chartreuse. */
+/* Two colors plus neutrals: the blue-to-lavender sky, and chartreuse.
+   Every sky stop keeps white text above 4.5:1, so text can sit anywhere on the gradient. */
 :root {
   --sky-1: #1d4863;
   --sky-2: #33688a;
-  --sky-3: #6683b6;
-  --sky-4: #9f8bd3;
-  --lime: #e4f76b;
-  --lime-ink: #18222c;
+  --sky-3: #50709f;
+  --sky-4: #6b63aa;
+  --lime: #e6f57a;
+  --lime-ink: #1c2b36;
 
-  --ink: #18222c;
-  --ink-2: #435063;
+  --ink: #1c2b36;
+  --ink-2: #3d4c57;
   --ink-3: #566275;
   --line: #e3e8ef;
   --card: #ffffff;
@@ -37,7 +38,7 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background-color: var(--sky-2);
-  background-image: linear-gradient(168deg, var(--sky-1) 0%, var(--sky-2) 24%, var(--sky-3) 60%, var(--sky-4) 100%);
+  background-image: linear-gradient(168deg, var(--sky-1) 0%, var(--sky-2) 30%, var(--sky-3) 75%, var(--sky-4) 100%);
   overflow-x: hidden;
 }
 
@@ -55,6 +56,11 @@ a:hover { text-decoration-thickness: 2px; }
 .skip:focus { top: 12px; }
 
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.wrap.narrow { max-width: calc(1000px + 48px); }
+
+/* One-screen pages: header, centered main, footer */
+body.screen .wrap { min-height: 100vh; display: flex; flex-direction: column; }
+body.screen main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 @media (max-width: 600px) { .wrap { padding: 0 16px; } }
 
 /* ---------- top bar ---------- */
@@ -65,7 +71,7 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--on-sky-2);
 }
 .topbar a { color: var(--on-sky); text-decoration: none; }
-.topbar a:hover, .topbar a[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 2px; }
+.topbar a:hover, .topbar a[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 .topbar nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
 .topbar .right { display: flex; align-items: center; gap: 10px; }
 
@@ -220,4 +226,10 @@ footer.site a { color: var(--on-sky); }
   .topbar { gap: 10px; }
   .topbar nav ul { gap: 16px; }
   .pill { padding: 6px 12px; font-size: 12px; }
+}
+
+/* Home footer row */
+body.screen footer.site {
+  border-top: 1px solid rgb(255 255 255 / 0.3); padding: 28px 0 32px;
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
 }

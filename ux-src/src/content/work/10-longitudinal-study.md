@@ -6,6 +6,8 @@ place: Workiva
 emoji: 🔭
 theme: Strategic research
 summary: Satisfaction was flat despite quarter after quarter of releases, and research was all talk and no observation. A longitudinal study with the least satisfied user group changed the roadmap.
+card: "Six months with ten testers"
+hook: "A longitudinal study with the least satisfied users changed the roadmap."
 horse: Watch what people do. They'll tell you something different.
 ---
 
