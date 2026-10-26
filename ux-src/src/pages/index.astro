@@ -23,8 +23,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </section>
 
   <Fragment slot="footer">
-    <span>Director, UX Solutions · Helena, Montana</span>
-    <span>Open to Head of UX roles</span>
+    <div class="corral">
+      <button
+        class="emo horse"
+        type="button"
+        data-sound="whinny"
+        data-lines={JSON.stringify([
+          'Every number on this site is real. So am I.',
+          'Try the Giddy up button. Go on.',
+          'Six case studies. None of them are screens.',
+          'Written from Helena, Montana. Mostly between barn chores.',
+        ])}
+        aria-label="Play a whinny and change what the horse says"
+      >🐴</button>
+      <p class="bubble" aria-live="polite">Hi. I'm the one who picked the domain name.</p>
+    </div>
   </Fragment>
 </Base>
 
@@ -49,4 +62,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .secondary:hover { color: var(--lime); }
   @media (max-width: 600px) { .home { padding: 56px 0 72px; } }
+  .corral { display: flex; align-items: center; gap: 14px; }
+  .horse { font-size: 44px; }
+  .corral .bubble { margin: 0; text-transform: none; letter-spacing: normal; font-family: var(--font-body); font-size: 15px; }
 </style>

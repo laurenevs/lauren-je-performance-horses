@@ -228,8 +228,5 @@ footer.site a { color: var(--on-sky); }
   .pill { padding: 6px 12px; font-size: 12px; }
 }
 
-/* Home footer row */
-body.screen footer.site {
-  border-top: 1px solid rgb(255 255 255 / 0.3); padding: 28px 0 32px;
-  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-}
+/* Home: the horse sits where a footer would */
+body.screen footer.site { padding: 0 0 36px; }
